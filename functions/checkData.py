@@ -5,14 +5,31 @@
 #вводим дни, месяцы, года
 #проводим проверку отдельно по каждому значению
 # в функцию
-def checkData():
+def countday(mm):
+    if mm == 2:
+        return 28
+    elif mm == 4 or mm == 6 or mm == 9 or mm  == 11:
+        return 30
+    else:
+        return  31
+
+
+
+
+def checkDate(dd, mm, gg):
+    if mm<1 or mm > 12 or dd<1 or dd> countday(mm):
+        return False
+    else:
+        return  True
+
+def main():
     dd = int(input('введите день 1,2,3...' ))
     mm = int(input('введите месяц 1,2,3... ' ))
     gg = int(input('введите год 0000... ' ))
 
-    if dd <= 0 or dd>31 or mm <=0 or mm>12 or gg < 1 or mm == 2 and dd > 28:
-               print('no')
-    else:
+    if checkDate(dd,mm,gg):
         print('Yes')
+    else:
+        print('No')
 
-checkData()
+main()
