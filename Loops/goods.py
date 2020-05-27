@@ -1,3 +1,12 @@
+def price_discount(total):
+    if total >= 1000 and total < 2000:
+        return total * 0.95
+    elif total >= 2000:
+        return total * 0.9
+    else:
+        return total
+
+
 def main():
     N = int(input("Кол-во товаров: "))
     total = 0
@@ -8,15 +17,11 @@ def main():
         total = total+ cost
         if cost>maxcost :
             maxcost= cost
+
     print("Самый дорогой товар ", maxcost)
     print(" общая стоимость ", total)
-    if total >= 1000 and total < 2000:
-        print("Цена со скидкой", total*0.95, "Скидка 5%")
-    elif total >= 2000:
-        print("Цена со скидкой", total*0.9, 'Скидка 10%')
-    else:
-        dopgood = 1000 -total
-        print('купите еще на', dopgood, "И получите скидку 5%")
+    dis = price_discount(total)
+    print("Цена со скидкой", dis )
 
 main()
 
