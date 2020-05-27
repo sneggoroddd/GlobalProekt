@@ -1,9 +1,17 @@
 '''Определите, является ли данное число простым.'''
-def main():
-    number = 0
-    i = 1
-    number = int(input( "Введите число "))
-    while number/count = 1:
-        for i in range (number):
-            count = count + 1
+def isSimple(number):
+    for i in range (2, number):
+        if number % i == 0:
+            return  False
+    return  True
 
+
+def main():
+    number = int(input( "Введите число "))
+    if isSimple(number) == True:
+        print( "Простое")
+    else:
+        print("Не простое")
+
+
+main()
