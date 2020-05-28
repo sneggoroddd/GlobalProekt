@@ -1,3 +1,14 @@
+def statistic():
+    count_game = count_game + 1
+    if win != 0:
+        stat_win = win / count_game
+    else:
+       stat_win = 0
+    print(f'Побед {win} всего игр {count_game} процент побед {stat_win}')
+
+
+
+
 
 def main():
     import random
@@ -9,7 +20,9 @@ def main():
     #вести стастику пройгрышей и выйгрышей
     end = 1
     balance = 100
-
+    count_game = 0
+    win = 0
+    stat_win = 0
 
     while end == 1:
         computer = random.randint(1, 10)
@@ -23,6 +36,7 @@ def main():
                 print('Введенное число меньше')
             else:
                 print('УРА! Угадали!')
+                win = win + 1
                 if i == 1:
                     balance = balance + 50
                 elif i == 2:
@@ -33,10 +47,13 @@ def main():
         else:
             print(f'Попытки закончены. Вы проиграли. Загаданное число = {computer}')
 
+        statistic(win)
         print("Ваш баланс", balance)
-        if  balance < 0:
+        if  balance <= 0:
+            print(f'Баланс равен : {balance}. Игра окончена!')
             end = 0
         else:
             end = int(input("Продолжить игру? да- 1, нет- 0 :"))
+
 
 main()
