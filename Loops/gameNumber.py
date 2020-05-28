@@ -32,7 +32,11 @@ def main():
                 break
         else:
             print(f'Попытки закончены. Вы проиграли. Загаданное число = {computer}')
-            print("Ваш баланс", balance)
-        end = int(input("Продолжить игру? да- 1, нет- 0 :"))
+
+        print("Ваш баланс", balance)
+        if  balance < 0:
+            end = 0
+        else:
+            end = int(input("Продолжить игру? да- 1, нет- 0 :"))
 
 main()
