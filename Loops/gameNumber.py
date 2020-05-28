@@ -5,17 +5,21 @@ import random
 #если угадали с первой попытки то +50 со второго +30 с третьего +20
 #если баланса не хватает на игру то выводим сообщение об этом и завершаем игру
 #вести стастику пройгрышей и выйгрышей
+end = 1
 
-computer = random.randint(1, 10)
+while end == 1:
+    computer = random.randint(1, 10)
 
-for i in range(3):
-    user = int(input('Введите число: '))
-    if user > computer:
-        print('Введенное число больше')
-    elif user < computer:
-        print('Введенное число меньше')
+    for i in range(3):
+        user = int(input('Введите число: '))
+        if user > computer:
+            print('Введенное число больше')
+        elif user < computer:
+            print('Введенное число меньше')
+        else:
+            print('УРА! Угадали!')
+            break
     else:
-        print('УРА! Угадали!')
-        break
-else:
-    print(f'Попытки закончены. Вы проиграли. Загаданное число = {computer}')
+        print(f'Попытки закончены. Вы проиграли. Загаданное число = {computer}')
+
+    end = int(input("Продолжить игру? да- 1, нет- 0 :"))
