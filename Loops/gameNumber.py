@@ -1,4 +1,5 @@
-def statistic():
+def statistic(win):
+    global count_game
     count_game = count_game + 1
     if win != 0:
         stat_win = win / count_game
@@ -20,9 +21,9 @@ def main():
     #вести стастику пройгрышей и выйгрышей
     end = 1
     balance = 100
-    count_game = 0
     win = 0
     stat_win = 0
+    count_game = 0
 
     while end == 1:
         computer = random.randint(1, 10)
