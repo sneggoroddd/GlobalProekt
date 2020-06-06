@@ -36,10 +36,9 @@ def main():
             print(f'Попытки закончены. Вы проиграли. Загаданное число = {computer}')
 
         count_game = count_game + 1
-        if win != 0:
-            stat_win = win / count_game
-        else:
-            stat_win = 0
+
+        stat_win = win / count_game
+
         print(f'Побед {win} всего игр {count_game} процент побед {stat_win}')
         print("Ваш баланс", balance)
         if  balance <= 0:
